@@ -36,3 +36,28 @@ interface:
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
       }
+  customHome:
+    - url: /api/auth_center/v3/login  #登录
+      name: 登录  # 接口注释
+      className: TestLogin_customHome  # 接口类名
+      funName:
+        - test_login_customHome: {  # 接口方法名
+        bar: &hc [{ account : 13718411099 , password : Aa123456 }],  # 接口参数
+        test_data: {},
+        case_name: 正常登录,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/homepage/v3/addpage  #登录
+      name: 自定义首页  # 接口注释
+      className: TestLogin_addpage  # 接口类名
+      funName:
+        - test_login_add_page: {  # 接口方法名
+        bar: [{page_name : , img_url :  , addr: }],  # 接口参数
+        test_data: {},
+        case_name: 添加,
+        result: [0],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
