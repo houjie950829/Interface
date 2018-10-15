@@ -6,11 +6,10 @@ from random import randint,choice
 import random,os,re
 from datetime import date
 
-def  q(t,content):
-    p1 = r"\"batchNo\":\"(.+?)\","  # 模板
+def  regular(template,content):
+    p1 = r"\" \":\"(.+?)\","  # 模板
     pattern1 = re.compile(p1)
-    b = pattern1.findall(r.content)
-
+    b = pattern1.findall(content)
 
 def Addmeetingroom():
     print(os.path.dirname(__file__))
