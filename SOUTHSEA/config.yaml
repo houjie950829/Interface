@@ -1,0 +1,38 @@
+interface:
+  meeting:  # 会议
+    - url: /api/auth_center/v3/login  # 会议登录
+      name: 登录  # 接口注释
+      className: TestLogin_meeting  # 接口类名
+      funName:
+        - test_login_meeting: {  # 接口方法名
+        bar: [{ account : 13438457239 , password : Aa123456 }],  # 接口参数
+        test_data: {},
+        case_name: 正常登录,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/schedule/v3/m/meeting_list  # 会议列表
+      name: 会议列表  # 接口注释
+      className: meetinglist_meeting  # 接口类名
+      funName:
+        - test_meetinglist: {  # 接口方法名
+        bar: {},  # 接口参数
+        test_data: {},
+        case_name: 会议列表,
+        result: [0],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/schedule/v3/m/add_meeting  # 新增会议
+      name: 新增会议  # 接口注释
+      className: addmeeting_meeting  # 接口类名
+      funName:
+      - test_addmeeting: {  # 接口方法名
+        bar: {form_data: "{\"meeting_title\":\"会议主题\",\"meeting_time_day\":1539532800,\"meeting_time_h_i\":\"[\\\"1539594000,1539597600\\\"]\",\"meeting_person\":\"[\\\"100058296\\\"]\",\"minutes_person\":\"\",\"attend_way\":\"[{\\\"value\\\":\\\"1\\\",\\\"option\\\":\\\"现场会议\\\"}]\",\"meeting_room\":\"[{\\\"value\\\":3076,\\\"option\\\":\\\"北京会议室1厅\\\",\\\"address\\\":{\\\"actual_area_id\\\":\\\"\\\",\\\"actual_area_name\\\":\\\"\\\",\\\"province\\\":\\\"110000\\\",\\\"address\\\":\\\"sf\\\",\\\"city\\\":\\\"110100\\\",\\\"area\\\":\\\"110101\\\",\\\"province_name\\\":\\\"北京市\\\",\\\"city_name\\\":\\\"北京市\\\",\\\"area_name\\\":\\\"东城区\\\"}}]\",\"remind\":\"[{\\\"value\\\":4,\\\"option\\\":\\\"提前15分钟\\\"}]\",\"link_files\":\"\",\"meeting_service\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"关闭\\\"}]\",\"service_person\":\"\",\"service_content\":\"\"}"},  # 接口参数
+        test_data: {},
+        case_name: 新增会议,
+        result: [0],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+      }
