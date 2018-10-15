@@ -1,0 +1,11 @@
+.idea
+test.py
+*.pyc
+test*.py
+*.html
+__pycache__
+*.log
+config.ini
+gouuse.db
+venv
+

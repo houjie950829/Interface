@@ -1,0 +1,79 @@
+interface:
+  settings:
+    - url: /api/auth_center/v3/login  # 登录
+      name: 登录  # 接口注释
+      className: TestLogin_settings  # 接口类名
+      funName:
+        - test_login_settings: {  # 接口方法名
+        bar: [{'account': 13718411099, password: Li123456, company_id: 43428}],  # 接口参数
+        case_name: 正常登录,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/company_center/v3/view  # 接口地址
+      name: 基本信息  # 接口注释
+      className: TestView_settings  # 接口类名
+      funName:
+        - test_view: {  # 接口方法名
+        bar: {'system_type': scrm},  # 接口参数
+        case_name: 正常获取,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+          test_view_customer: {  # 接口方法名
+          bar: {'widgets_type': 1},  # 接口参数
+          case_name: 正常获取2,
+          result: ['0'],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+    - url: /api/company_center/v3/get_manager  # 获取超管
+      name: 超管列表  # 接口注释
+      className: TestGetManager_settings  # 接口类名
+      funName:
+        - test_get_manager: {  # 接口方法名
+        bar: {'system_type': scrm},  # 接口参数
+        case_name: 获取超管列表,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+          test_get_manager_success: {  # 接口方法名
+          bar: {'widgets_type': 1},  # 接口参数
+          case_name: 获取超管列表2,
+          result: ['0'],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_get_manager_success2: {  # 接口方法名
+          bar: {'widgets_type': 1},  # 接口参数
+          case_name: 获取超管列表2,
+          result: ['0'],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+  maven:
+    - url: /scrm/tagEdit  # 接口地址
+      name: 修改标签  # 接口注释
+      className: getFields_maven  # 接口类名
+      funName:
+        - test_getFields: {  # 接口方法名
+        bar: {'widgets_type': 1},  # 接口参数
+        case_name: 正常登录22,
+        result: [1, 2, 3],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/auth_center/v3/login  # 登录
+      name: 登录  # 接口注释
+      className: TestLogin_maven  # 接口类名
+      funName:
+        - test_login_maven: {  # 接口方法名
+        bar: [{'account': 13718411099, password: Li123456, company_id: 43428}],  # 接口参数
+        case_name: 正常登录3333,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
