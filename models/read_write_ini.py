@@ -4,7 +4,7 @@ import configparser
 from . configpath import readapp
 
 
-def write_ini(dir='SCRM', node='session', child='token0', content=None):
+def write_ini(dir='SOUTHSEA', node='session', child='token0', content=None):
     """写入ini文件"""
     path = readapp(dir, 'config.ini')  # 获取配置文件路径
     config=configparser.ConfigParser()
@@ -21,7 +21,7 @@ def write_ini(dir='SCRM', node='session', child='token0', content=None):
     f.close()
 
 
-def read_ini(dir='SCRM', node='session', child='token0'):
+def read_ini(dir='SOUTHSEA', node='session', child='token0'):
     """读取ini文件"""
     path = readapp(dir, 'config.ini')  # 获取配置文件路径
     config=configparser.ConfigParser()
