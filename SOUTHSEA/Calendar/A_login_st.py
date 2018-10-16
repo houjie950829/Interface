@@ -4,11 +4,11 @@ import requests
 from models import mytest, write_ini, MyYaml
 
 
-class TestLogin_addpage(mytest):
-    # 自定义首页
+class TestLogin_Calendar(mytest):
+    # 登录
 
-    def test_login_add_page(self):
-        # 添加
+    def test_login_customHome(self):
+        # 正常登录
         url = MyYaml('SOUTHSEA').baseUrl + self.data[0]
         if isinstance(self.data[1], list):
             for num in range(len(self.data[1])):
