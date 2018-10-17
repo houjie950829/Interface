@@ -4,10 +4,10 @@ import requests
 from models import mytest, write_ini, MyYaml
 
 
-class TestLogin_Calendar(mytest):
+class TestLogin_Calendaring(mytest):
     # 登录
 
-    def test_login_customHome(self):
+    def test_login_Calendaring(self):
         # 正常登录
         url = MyYaml('SOUTHSEA').baseUrl + self.data[0]
         if isinstance(self.data[1], list):

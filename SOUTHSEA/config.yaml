@@ -362,12 +362,12 @@ interface:
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
       }
-  Calendar:  # 日历
-    - url: /api/auth_center/v3/login  # 日历登录
+  Calendaring:  # 日历
+    - url: /api/auth_center/v3/login  # 会议登录
       name: 登录  # 接口注释
-      className: TestLogin_Calendar  # 接口类名
+      className: TestLogin_Calendaring  # 接口类名
       funName:
-      - test_login_Calendar: {  # 接口方法名
+      - test_login_Calendaring: {  # 接口方法名
         bar: [{ account: 13438457239 , password: Aa123456 }],  # 接口参数
         test_data: {},
         case_name: 正常登录,
@@ -377,7 +377,7 @@ interface:
       }
     - url: /api/schedule/v3/m/calendar_list  # 日历列表
       name: 日历列表  # 接口注释
-      className: Calendarlist_Calendar  # 接口类名
+      className: Calendarlist_Calendaring  # 接口类名
       funName:
       - test_Calendarlist: {  # 接口方法名
         bar: {},  # 接口参数
@@ -389,7 +389,7 @@ interface:
       }
     - url: /api/schedule/v3/m/get_regular_contact  # 获取常用联系人
       name: 获取常用联系人  # 接口注释
-      className: getregularcontact_Calendar  # 接口类名
+      className: getregularcontact_Calendaring  # 接口类名
       funName:
       - test_getregularcontact: {  # 接口方法名
         bar: {},  # 接口参数
