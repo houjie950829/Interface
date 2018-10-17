@@ -2,11 +2,11 @@ base_url:
   SOUTHSEA: http://testwxweb.app.gouuse.cn
 config:
   level: 10  # log级别（NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL对应的值分别为：0,10,20,30,40,50）
-  python: python3  # 指定python运行头
+  python: python  # 指定python运行头
   ip:
   port: 8000
   projectName: SOUTHSEA
-  EnvName: 线上环境
+  EnvName: 测试环境
   moudleName:    # 模块名称，如果为空默认跑全部模块 （暂时只支持单个模块的指定）
   matching: '*_st.py'   # 正则匹配用例
 email:
