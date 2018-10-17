@@ -165,12 +165,12 @@ class GetFile(object):
                                 yo = ''.join(str(_).strip().split())
                                 if str(yo) in yx:
                                     def_name = str(_)
-                                    case_name = yx.split(str(yo))[1][:-130]
-                                    url = yx.split(str(yo))[1][-130:-91]
+                                    case_name = yx.split(str(yo))[1][:-134]
+                                    url = yx.split(str(yo))[1][-134:-91]
                                     requests  = yx.split(str(yo))[1][-91:-20]
                                     result = yx.split(str(yo))[1][-20:]
                                     data = '    ' + "# @unittest.skip('暂时跳过')" + '\n' + '    ' + def_name + '\n' +\
-                                           '        ' + case_name + '\n' + '        ' + url + '\n' + '        ' + \
+                                           '        ' + case_name + '\n' + '        ' + url + '\n'  + '        ' + \
                                            requests + '\n' + '        ' + result
                                     with open(dir_file , 'at' , encoding='utf-8') as f:
                                         f.writelines(data)
