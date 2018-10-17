@@ -22,7 +22,7 @@ class MyYaml:
     @property
     def allAppYaml(self):
         """读取yaml里所有的内容"""
-        path = readapp('SCRM', self.name)
+        path = readapp('SOUTHSEA', self.name)
         f = open(path, encoding=self.encoding)
         data = yaml.load(f)
         f.close()

@@ -1,0 +1,5 @@
+Addmeetingroom: [{url: /api/schedule/v3/m/add_meeting_room }, data:
+  {"form_data":"{\"meeting_room_title\":\"%s\",\"address\":\"{\\\"actual_area_id\\\":48,\\\"actual_area_name\\\":\\\"1231\\\",\\\"province\\\":\\\"120000\\\",\\\"address\\\":\\\"2342\\\",\\\"city\\\":\\\"120100\\\",\\\"area\\\":\\\"\\\",\\\"province_name\\\":\\\"天津市\\\",\\\"city_name\\\":\\\"天津市\\\",\\\"area_name\\\":\\\"\\\"}\",\"accommodate_number\":\"23\",\"able_time\":\"%s\",\"asset\":\"\",\"diy_asset\":\"\",\"contact\":\"\",\"mobile\":\"\",\"intro\":\"\",\"img\":\"\",\"need_flow\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"否\\\"}]\",\"default_service_person\":\"\"}"}]
+Meetingroomslist : [{url: /api/schedule/v3/m/meeting_rooms}, data : {}]
+Arealist : [{url: /api/schedule/v3/m/actual_area_list}, data : {}]
+Areaupdate : [{url: /api/schedule/v3/m/actual_area_update}, data : {"actual_area_name":"12313","address":"{\"province\":\"130000\",\"address\":\"\",\"city\":\"130200\",\"area\":\"\",\"province_name\":\"河北省\",\"city_name\":\"唐山市\",\"area_name\":\"\"}"}]

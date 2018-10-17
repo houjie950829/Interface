@@ -1,10 +1,9 @@
 # coding=utf-8
 
 
-def results(expected, actual, parameter, Results):
+def results(expected, actual, Results):
     return {
         'expected': expected,
         'actual': actual,
-        'parameter': parameter,
         'Results': Results,
     }

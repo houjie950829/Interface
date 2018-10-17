@@ -67,7 +67,7 @@ class mytest(unittest.TestCase):
                             self.data.append(j[self.case_info]['test_data'])  # 预期结果       3
 
     def tearDown(self):
-        Resonse = results(self.data[2][0], self.result['code'], self.result)
+        Resonse = results(self.data[2][0], self.result['code'], self.result,)
         Resonse = json.dumps(Resonse, indent=4)
         Resonse = (base64.b64encode(Resonse.encode('utf-8'))).decode('utf-8')
         DB(self.insert_response % (self.case_info, Resonse)).sql_db()
