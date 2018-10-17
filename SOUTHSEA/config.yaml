@@ -29,434 +29,194 @@ interface:
       className: addmeeting_meeting  # 接口类名
       funName:
       - test_addmeeting: {  # 接口方法名
-        bar: {"form_data":"{\"meeting_title\":\"%s\",\"meeting_content\":\"\",\"meeting_time_day\":%s,\"meeting_time_h_i\":\"[\\\"%s\\\"]\",\"meeting_person\":\"[\\\"100057913\\\"]\",\"minutes_person\":\"\",\"attend_way\":\"[{\\\"value\\\":\\\"1\\\",\\\"option\\\":\\\"现场会议\\\"}]\",\"meeting_room\":\"[{\\\"value\\\":%s,\\\"address\\\":{\\\"actual_area_id\\\":28,\\\"actual_area_name\\\":\\\"测试区域1\\\",\\\"province\\\":\\\"510000\\\",\\\"address\\\":\\\"111\\\",\\\"city\\\":\\\"510100\\\",\\\"area\\\":\\\"510108\\\",\\\"province_name\\\":\\\"四川省\\\",\\\"city_name\\\":\\\"成都市\\\",\\\"area_name\\\":\\\"成华区\\\"}}]\",\"remind\":\"[{\\\"value\\\":4,\\\"option\\\":\\\"提前15分钟\\\"}]\",\"link_files\":\"\",\"meeting_service\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"关闭\\\"}]\",\"service_person\":\"\",\"service_content\":\"\"}"},  # 接口参数
+        bar: {form_data: "{\"meeting_title\":\"会议主题\",\"meeting_time_day\":1539532800,\"meeting_time_h_i\":\"[\\\"1539594000,1539597600\\\"]\",\"meeting_person\":\"[\\\"100058296\\\"]\",\"minutes_person\":\"\",\"attend_way\":\"[{\\\"value\\\":\\\"1\\\",\\\"option\\\":\\\"现场会议\\\"}]\",\"meeting_room\":\"[{\\\"value\\\":3076,\\\"option\\\":\\\"北京会议室1厅\\\",\\\"address\\\":{\\\"actual_area_id\\\":\\\"\\\",\\\"actual_area_name\\\":\\\"\\\",\\\"province\\\":\\\"110000\\\",\\\"address\\\":\\\"sf\\\",\\\"city\\\":\\\"110100\\\",\\\"area\\\":\\\"110101\\\",\\\"province_name\\\":\\\"北京市\\\",\\\"city_name\\\":\\\"北京市\\\",\\\"area_name\\\":\\\"东城区\\\"}}]\",\"remind\":\"[{\\\"value\\\":4,\\\"option\\\":\\\"提前15分钟\\\"}]\",\"link_files\":\"\",\"meeting_service\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"关闭\\\"}]\",\"service_person\":\"\",\"service_content\":\"\"}"},  # 接口参数
         test_data: {},
         case_name: 新增会议,
         result: [0],  # 预期结果
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
       }
-    - url: /api/schedule/v3/m/edit_meeting  # 编辑会议
-      name: 编辑会议  # 接口注释
-      className: editmeeting_meeting  # 接口类名
-      funName:
-      - test_editmeeting: {  # 接口方法名
-        bar: {"meeting_id": 2856 ,"form_data":"{\"meeting_title\":\"%s\",\"meeting_content\":\"\",\"meeting_time_day\":%s,\"meeting_time_h_i\":\"[\\\"%s\\\"]\",\"meeting_person\":\"[\\\"100057913\\\"]\",\"minutes_person\":\"\",\"attend_way\":\"[{\\\"value\\\":\\\"1\\\",\\\"option\\\":\\\"现场会议\\\"}]\",\"meeting_room\":\"[{\\\"value\\\":%s,\\\"address\\\":{\\\"actual_area_id\\\":28,\\\"actual_area_name\\\":\\\"测试区域1\\\",\\\"province\\\":\\\"510000\\\",\\\"address\\\":\\\"111\\\",\\\"city\\\":\\\"510100\\\",\\\"area\\\":\\\"510108\\\",\\\"province_name\\\":\\\"四川省\\\",\\\"city_name\\\":\\\"成都市\\\",\\\"area_name\\\":\\\"成华区\\\"}}]\",\"remind\":\"[{\\\"value\\\":4,\\\"option\\\":\\\"提前15分钟\\\"}]\",\"link_files\":\"\",\"meeting_service\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"关闭\\\"}]\",\"service_person\":\"\",\"service_content\":\"\"}"},  # 接口参数
-        test_data: {},
-        case_name: 编辑会议,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_member_refuse  # 会议拒绝
-      name: 会议拒绝  # 接口注释
-      className: meetingrefuse_meeting  # 接口类名
-      funName:
-      - test_meetingrefuse: {  # 接口方法名
-        bar: {"meeting_id":3743,"reason":"忙，没空，扯淡",},  # 接口参数
-        test_data: {},
-        case_name: 会议拒绝,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_member_pass  # 会议接受
-      name: 会议接受  # 接口注释
-      className: meetingpass_meeting  # 接口类名
-      funName:
-      - test_meetingpass: {  # 接口方法名
-        bar: {"meeting_id":3743},  # 接口参数
-        test_data: {},
-        case_name: 会议接受,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_info  # 会议详情（表单带模板数据）
-      name: 会议详情（表单带模板数据）  # 接口注释
-      className: meetinginfo_meeting  # 接口类名
-      funName:
-      - test_meetinginfo: {  # 接口方法名
-        bar: {"meeting_id":3743},  # 接口参数
-        test_data: {},
-        case_name: 会议详情（表单带模板数据）,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_cancel  # 会议撤回
-      name: 会议撤回  # 接口注释
-      className: meetingcancel_meeting  # 接口类名
-      funName:
-      - test_meetingcancel: {  # 接口方法名
-        bar: {"meeting_id":3743},  # 接口参数
-        test_data: {},
-        case_name: 会议撤回,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/get_meeting_tpl  # 获取会议表单模板
-      name: 获取会议表单模板  # 接口注释
-      className: meetingtpl_meeting  # 接口类名
-      funName:
-      - test_meetingtpl: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 获取会议表单模板,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_set_read  # 获取会议表单模板
-      name: 获取会议表单模板  # 接口注释
-      className: meetingsetread_meeting  # 接口类名
-      funName:
-      - test_meetingsetread: {  # 接口方法名
-        bar: {"meeting_id":3743},  # 接口参数
-        test_data: {},
-        case_name: 获取会议表单模板,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/update_minutes_person  # 更改会议纪要人
-      name: 更改会议纪要人  # 接口注释
-      className: updateperson_meeting  # 接口类名
-      funName:
-      - test_updateperson: {  # 接口方法名
-        bar: {"meeting_id":3743,"minutes_person":"[100058277]"},  # 接口参数
-        test_data: {},
-        case_name: 更改会议纪要人,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-       }
-    - url: /api/schedule/v3/m/meeting_conflict  # 判断冲突
-      name: 判断冲突  # 接口注释
-      className: meetingconflict_meeting  # 接口类名
-      funName:
-      - test_meetingconflict: {  # 接口方法名
-        bar: {"meeting_time_day": 1539619200, "meeting_time_h_i":"[\"1539680400,1539682200\"]","meeting_person":"[\"100058277\"]","minutes_person":"[]"},  # 接口参数
-        test_data: {},
-        case_name: 判断冲突,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-  meetingroom:  # 会议室
-    - url: /api/auth_center/v3/login  # 会议登录
+  skydrive:
+    - url: /api/auth_center/v3/login  # 登录
       name: 登录  # 接口注释
-      className: TestLogin_meetingroom  # 接口类名
+      className: TestLogin_skydrive  # 接口类名
       funName:
-      - test_login_meetingroom: {  # 接口方法名
-        bar: [{ account: 13438457239 , password: Aa123456 }],  # 接口参数
+        - test_login_skydrive: {  # 接口方法名
+        bar: &hc [{ account : 13718411099 , password : Aa123456 },] ,  # 接口参数
         test_data: {},
         case_name: 正常登录,
         result: ['0'],  # 预期结果
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_rooms  # 会议室列表
-      name: 会议室列表  # 接口注释
-      className: meetinglist_meetingroom  # 接口类名
+        }
+    - url: /api/file_service/v3/net_disk_list  #登录
+      name:  网盘 # 接口注释
+      className: skydrive_skydrive  # 接口类名
       funName:
-      - test_meetinglist: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 会议室列表,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/add_meeting_room  # 添加会议室
-      name: 添加会议室  # 接口注释
-      className: addroom_meetingroom  # 接口类名
-      funName:
-      - test_addroom: {  # 接口方法名
-        bar: {"form_data":"{\"meeting_room_title\":\"%s\",\"address\":\"{\\\"actual_area_id\\\":48,\\\"actual_area_name\\\":\\\"1231\\\",\\\"province\\\":\\\"120000\\\",\\\"address\\\":\\\"2342\\\",\\\"city\\\":\\\"120100\\\",\\\"area\\\":\\\"\\\",\\\"province_name\\\":\\\"天津市\\\",\\\"city_name\\\":\\\"天津市\\\",\\\"area_name\\\":\\\"\\\"}\",\"accommodate_number\":\"23\",\"able_time\":\"%s\",\"asset\":\"\",\"diy_asset\":\"\",\"contact\":\"\",\"mobile\":\"\",\"intro\":\"\",\"img\":\"\",\"need_flow\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"否\\\"}]\",\"default_service_person\":\"\"}"},  # 接口参数
-        test_data: {},
-        case_name: 添加会议室,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/edit_meeting_room  # 编辑会议室
-      name: 编辑会议室  # 接口注释
-      className: editroom_meetingroom  # 接口类名
-      funName:
-      - test_editroom: {  # 接口方法名
-        bar: {"meeting_room_id": 3270 ,"form_data":"{\"meeting_room_title\":\"%s\",\"address\":\"{\\\"actual_area_id\\\":48,\\\"actual_area_name\\\":\\\"1231\\\",\\\"province\\\":\\\"120000\\\",\\\"address\\\":\\\"2342\\\",\\\"city\\\":\\\"120100\\\",\\\"area\\\":\\\"\\\",\\\"province_name\\\":\\\"天津市\\\",\\\"city_name\\\":\\\"天津市\\\",\\\"area_name\\\":\\\"\\\"}\",\"accommodate_number\":\"23\",\"able_time\":\"%s\",\"asset\":\"\",\"diy_asset\":\"\",\"contact\":\"\",\"mobile\":\"\",\"intro\":\"\",\"img\":\"\",\"need_flow\":\"[{\\\"value\\\":0,\\\"option\\\":\\\"否\\\"}]\",\"default_service_person\":\"\"}"},  # 接口参数
-        test_data: {},
-        case_name: 编辑会议室,
+        - test_net_disk_list: {  # 接口方法名
+        bar: ,  # 接口参数
+        test_data: {list_type: myRecent,},
+        case_name: 网盘列表,
         result: [0],  # 预期结果
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
         }
-    - url: /api/schedule/v3/m/meeting_room_info  # 会议室详情
-      name: 会议室详情  # 接口注释
-      className: roominfo_meetingroom  # 接口类名
+          test_search_list: {  # 接口方法名
+          bar: [*hc, /api/file_service/v3/search_list, {}] ,  # 接口参数
+          test_data: ,
+          case_name: 网盘搜索,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+  universalthrough:
+    - url: /api/auth_center/v3/login  # 登录
+      name: 登录  # 接口注释
+      className: TestLogin_universalthrough  # 接口类名
       funName:
-      - test_roominfo: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
+        - test_login_universalthrough: {  # 接口方法名
+        bar: *hc ,  # 接口参数
         test_data: {},
-        case_name: 会议室详情,
+        case_name: 正常登录,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/know_all/v3/do_add_ann  #登录
+      name:  百事通 # 接口注释
+      className: universal_universalthrough  # 接口类名
+      funName:
+        - test_do_add_ann: {  # 接口方法名
+        bar: {title: , visible_range: '[{"type": 1, "id": []}]', content: ,push_status: 2,} ,  # 接口参数
+        test_data: [],
+        case_name: 百事通——添加,
         result: [0],  # 预期结果
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_room_close  # 关闭会议室
-      name: 关闭会议室  # 接口注释
-      className: roomclose_meetingroom  # 接口类名
+        }
+          test_announce_list: {  # 接口方法名
+          bar: [/api/know_all/v3/announce_list, {}] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——列表(权限),
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_lower_frame_Ann: {  # 接口方法名
+          bar: [/api/know_all/v3/do_lower_frame_Ann, {announce_id: }] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——下架,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_do_del_ann: {  # 接口方法名
+          bar: [/api/know_all/v3/do_del_ann, {announce_id: }] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——删除,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_announce_sort: {  # 接口方法名
+          bar: [/api/know_all/v3/announce_sort, {sorts: , announce_ids: , }] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——排序(个人排序),
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_publish: {  # 接口方法名
+          bar: [/api/know_all/v3/publish, {announce_id: }] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——发布,
+          result: ['0'],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_manageAnnounce: {  # 接口方法名
+          bar: [/api/know_all/v3/manageAnnounce, {}] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——列表(后台),
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_logList: {  # 接口方法名
+          bar: [/api/know_all/v3/logList, {announce_id: ,}] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——操作记录,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_do_edit_ann: {  # 接口方法名
+          bar: [/api/know_all/v3/do_edit_ann,{title: , visible_range: '[{"type": 1, "id": []}]', content: ,push_status: 2, announce_id: },] ,  # 接口参
+          test_data: ,
+          case_name: 百事通——编辑,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_details: {  # 接口方法名
+          bar: [/api/know_all/v3/details, {announce_id: ,}] ,  # 接口参数
+          test_data: ,
+          case_name: 百事通——详情,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+  process:
+    - url: /api/auth_center/v3/login  # 登录
+      name: 登录  # 接口注释
+      className: TestLogin_process  # 接口类名
       funName:
-      - test_roomclose: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
+        - test_login_process: {  # 接口方法名
+        bar: *hc ,  # 接口参数
         test_data: {},
-        case_name: 关闭会议室,
+        case_name: 正常登录,
+        result: ['0'],  # 预期结果
+        mode: post,  # 请求类型
+        re_bar: data, # 请求参数
+        }
+    - url: /api/flow_center/v3/add_fix_route_type  #登录
+      name:  流程服务 # 接口注释
+      className: Fixedprocessserver_process  # 接口类名
+      funName:
+        - test_do_add_ann: {  # 接口方法名
+        bar: {type_name: 测试固定流程类型} ,  # 接口参数
+        test_data: [],
+        case_name: 固定流程服务——添加类型,
         result: [0],  # 预期结果
         mode: post,  # 请求类型
         re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/del_meeting_room  # 删除会议室
-      name: 删除会议室  # 接口注释
-      className: roomdel_meetingroom  # 接口类名
-      funName:
-      - test_roomdel: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
-        test_data: {},
-        case_name: 删除会议室,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
+        }
+          test_type_list: {  # 接口方法名
+          bar: [/api/flow_center/v3/fix_route_type_list, {},],  # 接口参数
+          test_data: [],
+          case_name: 固定流程服务——列表类型,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_del_fix_route_type: {  # 接口方法名
+          bar: [/api/flow_center/v3/del_fix_route_type, {type_id: },],  # 接口参数
+          test_data: [],
+          case_name: 固定流程服务——删除类型,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
+          test_edit_fix_route_type: {  # 接口方法名
+          bar: [/api/flow_center/v3/edit_fix_route_type, {type_id: ,type_name: 编辑后的类型名称},],  # 接口参数
+          test_data: [],
+          case_name: 固定流程服务——编辑类型,
+          result: [0],  # 预期结果
+          mode: post,  # 请求类型
+          re_bar: data, # 请求参数
+          }
 
-    - url: /api/schedule/v3/m/del_many_used  # 取消常用
-      name: 取消常用  # 接口注释
-      className: delmanyused_meetingroom  # 接口类名
-      funName:
-      - test_delmanyused: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
-        test_data: {},
-        case_name: 取消常用,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/meeting_room_open  # 开启会议室
-      name: 开启会议室  # 接口注释
-      className: roomopen_meetingroom  # 接口类名
-      funName:
-      - test_roomopen: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
-        test_data: {},
-        case_name: 开启会议室,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/check_meeting_room_free  # 检查会议室是否空闲
-      name: 检查会议室是否空闲  # 接口注释
-      className: roomfree_meetingroom  # 接口类名
-      funName:
-      - test_roomfree: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
-        test_data: {},
-        case_name: 检查会议室是否空闲,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-       }
-    - url: /api/schedule/v3/m/get_meeting_room_time  # 检查会议室占用情况
-      name: 检查会议室占用情况  # 接口注释
-      className: roomtime_meetingroom  # 接口类名
-      funName:
-      - test_roomtime: {  # 接口方法名
-        bar: {"meeting_room_id": 3270 , date : "2018-10-16"},  # 接口参数
-        test_data: {},
-        case_name: 检查会议室占用情况,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-       }
-    - url: /api/schedule/v3/m/get_meeting_room_tpl  # 获取会议室表单模板
-      name: 获取会议室表单模板  # 接口注释
-      className: roomtpl_meetingroom  # 接口类名
-      funName:
-      - test_roomtpl: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 获取会议室表单模板,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-        }
-    - url: /api/schedule/v3/m/set_many_used  # 设置常用
-      name: 设置常用  # 接口注释
-      className: setmanyused_meetingroom  # 接口类名
-      funName:
-      - test_setmanyused: {  # 接口方法名
-        bar: {"meeting_room_id": 3270},  # 接口参数
-        test_data: {},
-        case_name: 设置常用,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-        }
-    - url: /api/schedule/v3/m/get_choose_meeting  # 选择会议室--获取会议列表
-      name: 选择会议室--获取会议列表  # 接口注释
-      className: roomchoose_meetingroom  # 接口类名
-      funName:
-      - test_roomchoose: {  # 接口方法名
-        bar: {"meeting_time_day": "2018-10-16"},  # 接口参数
-        test_data: {},
-        case_name: 选择会议室--获取会议列表,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/get_choose_meeting_room  # 选择会议室--获取会议室列表
-      name: 选择会议室--获取会议室列表  # 接口注释
-      className: choosemeetingroom_meetingroom  # 接口类名
-      funName:
-      - test_choosemeetingroom: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 选择会议室--获取会议室列表 ,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/actual_area_update  # 添加/更新区域
-      name: 添加/更新区域  # 接口注释
-      className: areaupdate_meetingroom  # 接口类名
-      funName:
-      - test_areaupdate: {  # 接口方法名
-        bar: {"actual_area_name":"12313","address":"{\"province\":\"130000\",\"address\":\"\",\"city\":\"130200\",\"area\":\"\",\"province_name\":\"河北省\",\"city_name\":\"唐山市\",\"area_name\":\"\"}"},  # 接口参数
-        test_data: {},
-        case_name: 添加/更新区域 ,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-        }
-    - url: /api/schedule/v3/m/actual_area_list  # 区域列表
-      name: 区域列表  # 接口注释
-      className: arealist_meetingroom  # 接口类名
-      funName:
-      - test_arealist: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 区域列表 ,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/actual_area_delete  # 删除区域
-      name: 删除区域  # 接口注释
-      className: areadelete_meetingroom  # 接口类名
-      funName:
-      - test_areadelete: {  # 接口方法名
-        bar: { actual_area_ids : "[52]"},  # 接口参数
-        test_data: {},
-        case_name: 删除区域 ,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-  Calendaring:  # 日历
-    - url: /api/auth_center/v3/login  # 会议登录
-      name: 登录  # 接口注释
-      className: TestLogin_Calendaring  # 接口类名
-      funName:
-      - test_login_Calendaring: {  # 接口方法名
-        bar: [{ account: 13438457239 , password: Aa123456 }],  # 接口参数
-        test_data: {},
-        case_name: 正常登录,
-        result: ['0'],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/calendar_list  # 日历列表
-      name: 日历列表  # 接口注释
-      className: Calendarlist_Calendaring  # 接口类名
-      funName:
-      - test_Calendarlist: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 日历列表,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/get_regular_contact  # 获取常用联系人
-      name: 获取常用联系人  # 接口注释
-      className: getregularcontact_Calendaring  # 接口类名
-      funName:
-      - test_getregularcontact: {  # 接口方法名
-        bar: {},  # 接口参数
-        test_data: {},
-        case_name: 获取常用联系人,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-  schedule:  # 日程
-    - url: /api/auth_center/v3/login  # 日程登录
-      name: 登录  # 接口注释
-      className: TestLogin_schedule  # 接口类名
-      funName:
-      - test_login_schedule: {  # 接口方法名
-        bar: [{ account: 13438457239 , password: Aa123456 }],  # 接口参数
-        test_data: {},
-        case_name: 正常登录,
-        result: ['0'],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/add_schedule  # 添加日程
-      name: 添加日程  # 接口注释
-      className: addschedule_schedule  # 接口类名
-      funName:
-      - test_addschedule: {  # 接口方法名
-        bar: {"form_data":"{\"topic\":\"%s\",\"choose_time\":\"{\\\"is_all_day\\\":0,\\\"time\\\":\\\"%s\\\"}\",\"member_ids\":\"\",\"remind\":\"[{\\\"option\\\":\\\"提前1天\\\",\\\"value\\\":7}]\"}"},  # 接口参数
-        test_data: {},
-        case_name: 添加日程,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/edit_schedule  # 编辑日程
-      name: 编辑日程  # 接口注释
-      className: editschedule_schedule  # 接口类名
-      funName:
-      - test_editschedule: {  # 接口方法名
-        bar: {"follow_id":"23352","form_data":"{\"topic\":\"%s\",\"choose_time\":\"{\\\"is_all_day\\\":0,\\\"time\\\":\\\"%s\\\"}\",\"member_ids\":\"\",\"remind\":\"[{\\\"option\\\":\\\"提前1天\\\",\\\"value\\\":7}]\"}"},  # 接口参数
-        test_data: {},
-        case_name: 编辑日程,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-        }
-    - url: /api/schedule/v3/m/schedule_list  # 获取日程列表
-      name: 获取日程列表  # 接口注释
-      className: schedulelist_schedule  # 接口类名
-      funName:
-      - test_schedulelist: {  # 接口方法名
-        bar: {start_time: '2018-10-16',end_time : '2018-10-20'},  # 接口参数
-        test_data: {},
-        case_name: 获取日程列表,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
-    - url: /api/schedule/v3/m/reply_schedule  # 日程回复
-      name: 日程回复  # 接口注释
-      className: schedulereply_schedule  # 接口类名
-      funName:
-      - test_schedulereply: {  # 接口方法名
-        bar: {follow_id: '23352',content: '测试11'},  # 接口参数
-        test_data: {},
-        case_name: 日程回复,
-        result: [0],  # 预期结果
-        mode: post,  # 请求类型
-        re_bar: data, # 请求参数
-      }
+
+
+
+

@@ -1,0 +1,12 @@
+
+# 所有的url只能是列表的方式传入，bar可以传任意类型
+
+addprocess:
+  - url: [/api/flow_center/v3/add_fix_route_type,]
+    bar: {type_name: ,}
+listprocess:
+  - url: [/api/flow_center/v3/fix_route_type_list,]
+    bar: {}
+getmemberid:
+  - url: [/api/user_center/v3/admin_member_list,]
+    bar: {status: 1, page_size: 30}

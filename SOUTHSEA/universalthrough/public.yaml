@@ -1,0 +1,15 @@
+
+# 所有的url只能是列表的方式传入，bar可以传任意类型
+
+adduniversalthrough:
+  - url: [/api/know_all/v3/do_add_ann,]
+    bar: {title: 添加标题, visible_range: '[{"type": 1, "id": []}]', content: 添加内容,push_status: 2,}
+listuniversalthrough:
+  - url: [/api/know_all/v3/manageAnnounce,]
+    bar: {}
+selfuniversalthrough:
+  - url: [/api/know_all/v3/announce_list,]
+    bar: {}
+deluniversalthrough:
+  - url: [/api/know_all/v3/do_del_ann, {announce_id: }]
+    bar: {}
