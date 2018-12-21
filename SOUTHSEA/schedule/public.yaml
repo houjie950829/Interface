@@ -1,1 +1,0 @@
-Addschedule : [{url: /api/schedule/v3/m/add_schedule }, data : {"form_data":"{\"topic\":\"%s\",\"choose_time\":\"{\\\"is_all_day\\\":0,\\\"time\\\":\\\"%s\\\"}\",\"member_ids\":\"\",\"remind\":\"[{\\\"option\\\":\\\"提前1天\\\",\\\"value\\\":7}]\"}"}]

@@ -49,5 +49,5 @@ class encryption(object):
 
 if __name__ == '__main__':
     md5 = encryption()
-    b = md5.md5_token('13718450002', '1234')
+    b = md5.md5_token('15102823933', '1234')
     print(b)

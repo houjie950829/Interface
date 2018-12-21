@@ -41,7 +41,9 @@ class mytest(unittest.TestCase):
             self.token = read_ini()  # 从配置文件获取token
         except Exception:
             self.token = '0'
-        self.headers = {'Authorization': self.token}
+        self.headers = {'Authorization': self.token,
+                        'charset': 'UTF-8'
+                        }
 
     @classmethod
     def tearDownClass(cls):
@@ -67,7 +69,14 @@ class mytest(unittest.TestCase):
                             self.data.append(j[self.case_info]['test_data'])  # 预期结果       3
 
     def tearDown(self):
-        Resonse = results(self.data[2][0], self.result['code'], self.result,)
+        Resonse = results (
+            expected=self.data[2][0],
+            actual=self.result['code'],
+            parameter=self.data[1],
+            Results=self.result,
+            time_count=self.usetime
+            # usetime=self.usetime,
+        )
         Resonse = json.dumps(Resonse, indent=4)
         Resonse = (base64.b64encode(Resonse.encode('utf-8'))).decode('utf-8')
         DB(self.insert_response % (self.case_info, Resonse)).sql_db()

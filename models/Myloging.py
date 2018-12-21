@@ -55,6 +55,6 @@ class Loging:
 
 if __name__ == '__main__':
     log = Loging()
-    log.debug('yuzhiqiang')
+    log.debug('lemon')
     log.debug('dfddfddddddddddddd')
     log.error('2222222222222222222222222')

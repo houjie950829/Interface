@@ -98,7 +98,7 @@ class Mail(object):
         msg_file.attach(msg_text)
         msg_file.attach(mail_body)
 
-        att = MIMEText(open(self.img_pt, 'rb').read(), 'base64', 'utf-8')  # 添加附件
+        att = MIMEText(open(self.file_new, 'rb').read(), 'base64', 'utf-8')  # 添加附件
         att["Content-Type"] = 'application/octet-stream'
         att["Content-Disposition"] = 'attachment; filename="%s_result.html"' % time.strftime('%Y-%m-%d %H_%M_%S')  # 附件名称
         msg_file.attach(att)

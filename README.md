@@ -23,11 +23,12 @@ class contacts_contact(mytest):
         # 联系人列
         url = MyYaml('SCRM').baseUrl + self.data[0]
         r = requests.post(url, headers=self.headers, data=self.data[1], stream=True)
+        self.usetime = '%.2f' % r.elapsed.total_seconds ()
         self.result = r.json()
 
 
 if __name__ == '__main__':
     unittest.main()
 ```
-
-
+1、环境所需模块：requests、django、selenium、PyYAML、bottle、pillow
+2、Lib中添加.pth(内容为项目路径)

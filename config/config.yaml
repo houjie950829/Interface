@@ -3,19 +3,21 @@ base_url:
 config:
   level: 10  # log级别（NOTSET, DEBUG, INFO, WARNING, ERROR, CRITICAL对应的值分别为：0,10,20,30,40,50）
   python: python  # 指定python运行头
-  ip:
+  ip: 192.168.0.150
   port: 8000
+  domain:  #scrm.test-report.gouuse.cn
+  timeout: 3
   projectName: SOUTHSEA
   EnvName: 测试环境
-  moudleName:    # 模块名称，如果为空默认跑全部模块 （暂时只支持单个模块的指定）
+  moudleName: skydrive  # 模块名称，如果为空默认跑全部模块 （暂时只支持单个模块的指定）
   matching: '*_st.py'   # 正则匹配用例
 email:
   title: 够用功能自动化测试报告
   desc: 用例执行情况
   smtp: smtp.gouuse.cn # smtp服务 如 smtp.163.com
-  send_name_from: houchao@gouuse.cn # from邮箱用户名
+  send_name_from: houjie@gouuse.cn # from邮箱用户名
   send_pwd_from: Aa123456 # from邮箱密码
-  send_name_to: [yuzhiqiang@gouuse.cn,houchao@gouuse,chenjianbo@gouuse.cn,wangjie@gouuse.cn,] #,houchao@gouuse.cn,chenjianbo@gouuse.cn,wangjie@gouuse.cn,luomenghan@gouuse.cn,zhangyubo@gouuse.cn] # to邮箱 luomenghan@gouuse.cn,yuzhiqiang@gouuse.cn
+  send_name_to: [houjie@gouuse.cn] #,houchao@gouuse.cn,chenjianbo@gouuse.cn,wangjie@gouuse.cn,luomenghan@gouuse.cn,zhangyubo@gouuse.cn] # to邮箱 luomenghan@gouuse.cn,yuzhiqiang@gouuse.cn
 sql:
   insert_results: INSERT INTO results ('data') VALUES ('%s'); # 在结果统计表中插入统计结果
   search_results: SELECT data FROM results WHERE 1=1; # 获取结果 数据
@@ -27,12 +29,15 @@ sql:
 data: {  # 测试报告基础信息
     'report_title': '接口测试报告',
     'theme': '接口数据统计',
-    'report_table_title': ['项目名称', '用例编号', '用例名称', '接口地址', '接口方法', '测试结果', '详细信息'],
+    'report_table_title': ['项目名称', '用例编号', '用例名称', '接口地址', '接口方法', '响应时间','测试结果', '详细信息'],
     'report_cases': {'all_cases': [],
         'right_cases': [],
-        'fail_cases': [],
-        'error_cases': [],
+        'fail_error_cases':[],
+        'timeout_cases':[],
+#        'fail_cases': [],
+#        'error_cases': [],
         'untreaded_cases': [],
+
     },
     'test_info': [],
 }

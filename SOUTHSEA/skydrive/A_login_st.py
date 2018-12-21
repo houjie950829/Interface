@@ -14,6 +14,7 @@ class TestLogin_skydrive(mytest):
             for num in range(len(self.data[1])):
                 self.log.debug('登录账号：%s' % self.data[1][num])
                 r = requests.post(url, data=self.data[1][num], stream=True)
+                self.usetime = '%.2f' % r.elapsed.total_seconds ()
                 self.result = r.json()
                 self.log.debug('登录返回信息：%s' % self.result)
                 if self.result['code'] == self.data[2][0]:
@@ -26,6 +27,7 @@ class TestLogin_skydrive(mytest):
                     self.log.debug('登录失败：%s' % self.result)
         else:
             r = requests.post(url, data=self.data[1], stream=True)
+            self.usetime = '%.2f' % r.elapsed.total_seconds ()
             self.result = r.json()
             if self.result['code'] == self.data[2][0]:
                 try:
